@@ -1,0 +1,50 @@
+1. Display current logged-in user:
+whoami
+
+2. Check logged-in users and their activity:
+who
+
+3. View login history:
+last
+
+4. Display system info, hostname, and uptime:
+uname -a
+hostname
+uptime
+
+5. Create groups and verify:
+
+Create groups:
+sudo groupadd developers
+sudo groupadd qa
+
+Verify:
+cat /etc/group
+
+6. Create users and assign groups:
+sudo useradd -m -g developers aman
+sudo useradd -m -g developers ritu
+sudo useradd -m -g qa karan
+
+Set passwords:
+sudo passwd aman
+sudo passwd ritu
+sudo passwd karan
+
+Verify user-group assignment:
+id aman
+id ritu
+id karan
+
+7. Remove user ritu completely:
+Check active sessions:
+who | grep ritu
+
+Kill session if active:
+sudo pkill -u ritu
+
+Delete user + home directory:
+sudo userdel -r ritu
+
+Verify deletion:
+id ritu

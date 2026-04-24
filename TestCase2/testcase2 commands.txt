@@ -1,0 +1,33 @@
+1. Navigate to home directory & create file:
+cd ~
+touch index.html
+
+2. Add HTML content:
+echo "<html><body><h1>Welcome to DevOps Lab</h1></body></html>" > index.html
+
+3. Check current default permissions:
+ls -l index.html
+
+4. Grant full permissions to all users (777):
+chmod 777 index.html
+
+Verify:
+ls -l index.html
+
+O/P:
+-rwxrwxrwx 1 user user ... index.html
+
+5. Change owner and group to www-data:
+sudo chown www-data:www-data index.html
+
+Verify:
+ls -l index.html
+
+O/P:
+-rwxrwxrwx 1 www-data www-data ... index.html
+
+7. Final verification:
+ls -l index.html
+
+Expected final output:
+-rwxr-xr-x 1 www-data www-data ... index.html
